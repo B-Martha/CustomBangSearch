@@ -28,7 +28,8 @@ export function shouldReject(blacklist: Readonly<string[]>, url: string): boolea
  */
 export function constructRedirect(redirectUrl: string, queryText: string): string {
   if (queryText === '') {
-    return (new URL(redirectUrl)).origin;
+    //return (new URL(redirectUrl)).origin;
+    queryText = '<>';
   }
   return redirectUrl.replace(/%s/g, encodeURIComponent(queryText));
 }
